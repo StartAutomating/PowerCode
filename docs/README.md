@@ -3,9 +3,11 @@ PowerCode is a PowerShell module to configure Visual Studio Code.
 ## Commands
 
 
-Name                           Value
-----                           -----
-Table                          {@{Name=Get-PowerCode; Link=docs/Get-PowerCode.md}, @{Name=Get-VSCode; Link=docs/Get-VSCode.md}, @{Name=Set-VSCode; Link=docs/Set-VSCode.md}}
+|Name                                  |
+|--------------------------------------|
+|[Get-PowerCode](Get-PowerCode.md)|
+|[Get-VSCode](Get-VSCode.md)      |
+|[Set-VSCode](Set-VSCode.md)      |
 
 
 
