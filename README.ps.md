@@ -4,7 +4,7 @@ PowerCode is a PowerShell module to configure Visual Studio Code.
 
 ~~~PipeScript {
     Import-Module .\PowerCode.psd1 -Global
-    @{
+    [PSCustomObject]@{
         Table =
             Get-Command -Module PowerCode | 
             Select-Object Name, @{
