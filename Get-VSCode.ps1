@@ -16,12 +16,14 @@ function Get-VSCode
         We want to be able to able get the data from files at both places, if they exist, regardless of OS.
     #>
     param(
+    # The Path to Visual Studio Code Settings.
+    # If not provided, settings will be automatically found.
     [Parameter(ValueFromPipelineByPropertyName)]
     [Alias('SettingsPath', 'Fullname')]
     $SettingPath
     )
 
-    begin {
+    dynamicParam {
         if (-not $script:VSCodeUserSettingPath) {
             $script:VSCodeUserSettingPath = 
                 if ($IsMacOS) 
@@ -39,6 +41,9 @@ function Get-VSCode
                     "$env:APPDATA\Code\User\settings.json"
                 }            
         }
+
+        $dynamicParams = Get-PowerCode -CommandName "Get-VSCode" -DynamicParameter -NoMandatoryDynamicParameter 
+        return $dynamicParams
     }
 
     process {
@@ -62,7 +67,18 @@ function Get-VSCode
             }
         )
 
+        $paramCopy = [Ordered]@{} + $PSBoundParameters
+        $null = $null
+        $extensionOutput = Get-PowerCode -CommandName "Get-VSCode" -ExtensionParameter $paramCopy -Run
+
+        if ($extensionOutput) {
+            $extensionOutput | 
+                Select-Object -ExpandProperty extensionOutput
+            return
+        }        
+
         $CombinedSettings = [Ordered]@{
+
             PSTypeName = 'VSCode.Settings'
             SettingsPath = $potentialPaths
         }
