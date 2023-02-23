@@ -15,7 +15,10 @@ function Get-VSCode
 
         We want to be able to able get the data from files at both places, if they exist, regardless of OS.
     #>
-    param(    
+    param(
+    [Parameter(ValueFromPipelineByPropertyName)]
+    [Alias('SettingsPath', 'Fullname')]
+    $SettingPath
     )
 
     begin {
@@ -41,18 +44,27 @@ function Get-VSCode
     process {
         # First, we need to find all potential settings.json paths
         $potentialPaths = @(
-            # There's the potential for a settings.json in any directory
-            $workspacePath = Join-Path $pwd ".vscode" | 
-                Join-Path -ChildPath "settings.json"
-            
-            if (Test-Path $workspacePath) {
-                "$workspacePath"
+            # If we provided a -SettingPath
+            if ($settingsPath) {
+                # look for settings there.
             }
-            $script:VSCodeUserSettingPath
+            else {
+                # Otherwise, look for a workspace setting
+                $workspacePath = Join-Path $pwd ".vscode" | 
+                    Join-Path -ChildPath "settings.json"
+                
+                if (Test-Path $workspacePath) {
+                    "$workspacePath"
+                }
+                
+                # and look for global settings.
+                $script:VSCodeUserSettingPath
+            }
         )
 
         $CombinedSettings = [Ordered]@{
             PSTypeName = 'VSCode.Settings'
+            SettingsPath = $potentialPaths
         }
         
         foreach ($settingsPath in $potentialPaths) {
