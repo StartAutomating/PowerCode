@@ -25,7 +25,17 @@ Gets the Visual Studio Code Version
 > EXAMPLE 1
 
 ```PowerShell
-Get-VSCode -Version
+Get-VSCode -CodeVersion
+```
+> EXAMPLE 2
+
+```PowerShell
+Get-PowerCode -VSCodeVersion
+```
+> EXAMPLE 3
+
+```PowerShell
+PowerCode -CodeVersion
 ```
 
 
