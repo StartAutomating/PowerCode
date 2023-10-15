@@ -33,7 +33,7 @@ Get-VSCode -Version
 
 
 ### Parameters
-#### **Version**
+#### **CodeVersion**
 
 If set, will get the version of VSCode.
 
@@ -42,9 +42,9 @@ If set, will get the version of VSCode.
 
 
 
-|Type      |Required|Position|PipelineInput|
-|----------|--------|--------|-------------|
-|`[Switch]`|true    |named   |false        |
+|Type      |Required|Position|PipelineInput|Aliases      |
+|----------|--------|--------|-------------|-------------|
+|`[Switch]`|true    |named   |false        |VSCodeVersion|
 
 
 
@@ -55,5 +55,5 @@ If set, will get the version of VSCode.
 
 ### Syntax
 ```PowerShell
-Extensions/GetCodeVersion.PowerCode.ps1 -Version [<CommonParameters>]
+Extensions/GetCodeVersion.PowerCode.ps1 -CodeVersion [<CommonParameters>]
 ```
