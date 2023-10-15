@@ -4,7 +4,11 @@
 .DESCRIPTION
     Gets the Visual Studio Code Version
 .EXAMPLE
-    Get-VSCode -Version
+    Get-VSCode -CodeVersion
+.EXAMPLE
+    Get-PowerCode -VSCodeVersion
+.EXAMPLE
+    PowerCode -CodeVersion
 #>
 [Management.Automation.Cmdlet("(?:Get){0,1}","(?>Power|VS)Code")]
 param(
