@@ -1,11 +1,11 @@
-Get-VSCode
-----------
+Get-PowerCode
+-------------
 
 
 
 
 ### Synopsis
-Gets VSCode settings.
+Gets PowerCode.
 
 
 
@@ -14,17 +14,9 @@ Gets VSCode settings.
 
 ### Description
 
-Gets Visual Studio Code settings.
-
-
-
----
-
-
-### Related Links
-* [https://code.visualstudio.com/docs/getstarted/settings](https://code.visualstudio.com/docs/getstarted/settings)
-
-
+Gets PowerCode and it's extended commands.
+Because 'Get' is the default verb in PowerShell,
+Get-PowerCode also allows you to run other commands in noun-oriented syntax.
 
 
 
@@ -32,10 +24,10 @@ Gets Visual Studio Code settings.
 
 
 ### Examples
-> EXAMPLE 1
+Get every specialized PowerCode command
 
 ```PowerShell
-Get-VSCode
+Get-PowerCode
 ```
 
 
@@ -43,32 +35,37 @@ Get-VSCode
 
 
 ### Parameters
-#### **SettingPath**
+#### **Argument**
 
-The Path to Visual Studio Code Settings.
-If not provided, settings will be automatically found.
-
-
-
-
-
-
-|Type      |Required|Position|PipelineInput        |Aliases                  |
-|----------|--------|--------|---------------------|-------------------------|
-|`[Object]`|false   |1       |true (ByPropertyName)|SettingsPath<br/>Fullname|
+Any positional arguments that are not directly bound.
+This parameter primarily exists to allow Get-PowerCode to pass it down to other commands.
 
 
 
 
 
----
+
+|Type      |Required|Position|PipelineInput|Aliases|
+|----------|--------|--------|-------------|-------|
+|`[Object]`|false   |named   |false        |Args   |
 
 
-### Notes
-Visual Studio code can have settings stored in a settings.json file 
-that exists within the workspace or at a global location.
 
-We want to be able to able get the data from files at both places, if they exist, regardless of OS.
+#### **InputObject**
+
+The InputObject.
+This parameter primarily exists to allow Get-PowerCode to pass it down to other commands.
+
+
+
+
+
+
+|Type      |Required|Position|PipelineInput |Aliases     |
+|----------|--------|--------|--------------|------------|
+|`[Object]`|false   |named   |true (ByValue)|Input<br/>In|
+
+
 
 
 
@@ -77,5 +74,5 @@ We want to be able to able get the data from files at both places, if they exist
 
 ### Syntax
 ```PowerShell
-Get-VSCode [[-SettingPath] <Object>] [<CommonParameters>]
+Get-PowerCode [-Argument <Object>] [-InputObject <Object>] [<CommonParameters>]
 ```
