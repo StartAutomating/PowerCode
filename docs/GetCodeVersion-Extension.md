@@ -1,4 +1,3 @@
-
 Extensions/GetCodeVersion.PowerCode.ps1
 ---------------------------------------
 
@@ -23,11 +22,11 @@ Gets the Visual Studio Code Version
 
 
 ### Examples
-#### EXAMPLE 1
+> EXAMPLE 1
+
 ```PowerShell
 Get-VSCode -Version
 ```
-
 
 
 ---
@@ -58,7 +57,3 @@ If set, will get the version of VSCode.
 ```PowerShell
 Extensions/GetCodeVersion.PowerCode.ps1 -Version [<CommonParameters>]
 ```
-
-
-
-
