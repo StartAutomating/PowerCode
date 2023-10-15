@@ -4,7 +4,12 @@
     steps = @(
         @{
             name = 'Check out repository'
-            uses = 'actions/checkout@v2'
+            uses = 'actions/checkout@v4'
+        },
+        @{
+            name = 'GitLogger'
+            uses = 'GitLogging/GitLoggerAction@main'
+            id = 'GitLogger'
         },
         @{
             name = 'Use PSSVG Action'
