@@ -32,11 +32,11 @@ Sets Visual Studio Code settings.
 
 
 ### Examples
-#### EXAMPLE 1
+> EXAMPLE 1
+
 ```PowerShell
 Set-VSCode
 ```
-
 
 
 ---
