@@ -15,10 +15,11 @@ function Get-PowerCode
     #>
     [CmdletBinding(PositionalBinding=$false)]
     [Alias(
-        'Get-VSCode',
+        'Get-VSCode',        
+        'Install-PowerCode','Install-VSCode',
         'Set-PowerCode','Set-VSCode',
-        'Install-VSCode','Install-PowerCode',
-        'Uninstall-VSCode', 'UnInstall-PowerCode'
+        'Uninstall-PowerCode','Uninstall-VSCode',
+        'Update-PowerCode','Update-VSCode'
     )]
     param(
     # Any positional arguments that are not directly bound.
