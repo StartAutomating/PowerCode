@@ -1,5 +1,9 @@
 #requires -Module PSDevOps
-Push-Location $PSScriptRoot
+Import-BuildStep -SourcePath (
+    Join-Path $PSScriptRoot 'GitHub'
+) -BuildSystem GitHubWorkflow
+
+Push-Location ($PSScriptRoot | Split-Path)
 
 Import-BuildStep -ModuleName PowerCode
 

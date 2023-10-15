@@ -576,8 +576,6 @@ jobs:
     steps: 
       - name: Check out repository
         uses: actions/checkout@v2
-      - name: UsePiecemeal
-        uses: StartAutomating/Piecemeal@main
       - name: BuildPipeScript
         uses: StartAutomating/PipeScript@main
       - name: UseEZOut
