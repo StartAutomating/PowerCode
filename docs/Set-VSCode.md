@@ -1,11 +1,11 @@
-Set-VSCode
-----------
+Get-PowerCode
+-------------
 
 
 
 
 ### Synopsis
-Sets VSCode settings.
+Gets PowerCode.
 
 
 
@@ -14,17 +14,9 @@ Sets VSCode settings.
 
 ### Description
 
-Sets Visual Studio Code settings.
-
-
-
----
-
-
-### Related Links
-* [https://code.visualstudio.com/docs/getstarted/settings](https://code.visualstudio.com/docs/getstarted/settings)
-
-
+Gets PowerCode and it's extended commands.
+Because 'Get' is the default verb in PowerShell,
+Get-PowerCode also allows you to run other commands in noun-oriented syntax.
 
 
 
@@ -32,10 +24,10 @@ Sets Visual Studio Code settings.
 
 
 ### Examples
-> EXAMPLE 1
+Get every specialized PowerCode command
 
 ```PowerShell
-Set-VSCode
+Get-PowerCode
 ```
 
 
@@ -43,55 +35,10 @@ Set-VSCode
 
 
 ### Parameters
-#### **SettingPath**
+#### **Argument**
 
-The Path to Visual Studio Code Settings.
-If not provided, settings will be automatically found.
-
-
-
-
-
-
-|Type      |Required|Position|PipelineInput        |Aliases                  |
-|----------|--------|--------|---------------------|-------------------------|
-|`[Object]`|false   |1       |true (ByPropertyName)|SettingsPath<br/>Fullname|
-
-
-
-#### **InUserSettings**
-
-If set will make changes to the user settings.
-
-
-
-
-
-
-|Type      |Required|Position|PipelineInput|
-|----------|--------|--------|-------------|
-|`[Switch]`|false   |named   |false        |
-
-
-
-#### **InWorkspaceSettings**
-
-If set will make changes to the workspace settings.
-
-
-
-
-
-
-|Type      |Required|Position|PipelineInput|
-|----------|--------|--------|-------------|
-|`[Switch]`|false   |named   |false        |
-
-
-
-#### **Change**
-
-One or more changes to the settings.
+Any positional arguments that are not directly bound.
+This parameter primarily exists to allow Get-PowerCode to pass it down to other commands.
 
 
 
@@ -100,32 +47,25 @@ One or more changes to the settings.
 
 |Type      |Required|Position|PipelineInput|Aliases|
 |----------|--------|--------|-------------|-------|
-|`[Object]`|false   |2       |false        |Changes|
+|`[Object]`|false   |named   |false        |Args   |
 
 
 
-#### **WhatIf**
--WhatIf is an automatic variable that is created when a command has ```[CmdletBinding(SupportsShouldProcess)]```.
--WhatIf is used to see what would happen, or return operations without executing them
-#### **Confirm**
--Confirm is an automatic variable that is created when a command has ```[CmdletBinding(SupportsShouldProcess)]```.
--Confirm is used to -Confirm each operation.
+#### **InputObject**
 
-If you pass ```-Confirm:$false``` you will not be prompted.
-
-
-If the command sets a ```[ConfirmImpact("Medium")]``` which is lower than ```$confirmImpactPreference```, you will not be prompted unless -Confirm is passed.
+The InputObject.
+This parameter primarily exists to allow Get-PowerCode to pass it down to other commands.
 
 
 
----
 
 
-### Notes
-Visual Studio code can have settings stored in a settings.json file 
-that exists within the workspace or at a global location.
 
-We want to be able to able get the data from files at both places, if they exist, regardless of OS.
+|Type      |Required|Position|PipelineInput |Aliases     |
+|----------|--------|--------|--------------|------------|
+|`[Object]`|false   |named   |true (ByValue)|Input<br/>In|
+
+
 
 
 
@@ -134,5 +74,5 @@ We want to be able to able get the data from files at both places, if they exist
 
 ### Syntax
 ```PowerShell
-Set-VSCode [[-SettingPath] <Object>] [-InUserSettings] [-InWorkspaceSettings] [[-Change] <Object>] [-WhatIf] [-Confirm] [<CommonParameters>]
+Get-PowerCode [-Argument <Object>] [-InputObject <Object>] [<CommonParameters>]
 ```
