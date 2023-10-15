@@ -42,6 +42,20 @@ Set-PowerCode -SetFontSize 18
 Set-PowerCode -SetFontSize 14 -SetFontSizeIn markdown
 ~~~
 
+## Changing the font family
+
+~~~PowerShell
+# Sets the font family to Consolas
+Set-PowerCode -SetFontFamily "Consolas"
+~~~
+
+#### Changing the font size for Markdown preview
+
+~~~PowerShell
+# Sets the font family to 'Arial' in the markdown preview
+Set-PowerCode -SetFontFamily 'Arial' -setfontfamilyin markdown
+~~~
+
 ## Commands
 
 
