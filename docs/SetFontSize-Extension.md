@@ -25,7 +25,17 @@ Sets the Visual Studio Code Font Size
 > EXAMPLE 1
 
 ```PowerShell
-Get-VSCode -Version
+Set-PowerCode -SetFontSize 24
+```
+> EXAMPLE 2
+
+```PowerShell
+Set-PowerCode -SetFontSize 48 -SetFontIn screencast
+```
+> EXAMPLE 3
+
+```PowerShell
+Update-PowerCode -UpdateFontSize 16 -SetFontIn markdown
 ```
 
 
@@ -58,6 +68,8 @@ Valid Values:
 
 * editor
 * terminal
+* screencast
+* markdown
 
 
 
