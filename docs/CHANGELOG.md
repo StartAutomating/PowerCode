@@ -7,4 +7,3 @@
 * Get-PowerCode (Fixes #4)
 * Set-VSCode (Fixes #5)
 * Initial Release of PowerCode (Fixes #1)
-
