@@ -20,6 +20,7 @@ PowerCode can be found in:
 
 * Any module that includes -PowerCodeModuleName in it's tags.
 * The directory specified in -PowerCodePath
+* Commands that meet the naming criteria
 
 
 
@@ -27,11 +28,11 @@ PowerCode can be found in:
 
 
 ### Examples
-#### EXAMPLE 1
+> EXAMPLE 1
+
 ```PowerShell
 Get-PowerCode
 ```
-
 
 
 ---
