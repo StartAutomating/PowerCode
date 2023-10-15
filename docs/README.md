@@ -13,4 +13,3 @@ PowerCode is a PowerShell module to configure Visual Studio Code.
 |[UnInstall-PowerCode](UnInstall-PowerCode.md)|
 |[Uninstall-VSCode](Uninstall-VSCode.md)      |
 |[Get-PowerCode](Get-PowerCode.md)            |
-|[Get-VSCode](Get-VSCode.md)                  |
