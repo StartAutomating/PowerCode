@@ -4,16 +4,20 @@
   <Type>
     <Name>PowerCode</Name>
     <Members>
+      <AliasProperty>
+        <Name>Extensions</Name>
+        <ReferencedMemberName>Extension</ReferencedMemberName>
+      </AliasProperty>
       <ScriptMethod>
         <Name>FindExtensions</Name>
         <Script>
                         &lt;#
 .SYNOPSIS
-
+    Finds extensions for a module
 .DESCRIPTION
-
+    Finds extended commands for a module. 
 .EXAMPLE
-    $posh.Commands.FindExtensions($posh, "$pwd")
+    $PowerCode.FindExtensions($PowerCode, "$pwd")
 #&gt;
 $targetModules = @()
 $targetPaths = @()
@@ -444,6 +448,13 @@ foreach ($module in $targetModules) {
 
                     </Script>
       </ScriptMethod>
+      <ScriptProperty>
+        <Name>Extension</Name>
+        <GetScriptBlock>
+                        $this.FindExtensions($this, ($This | Split-Path))
+
+                    </GetScriptBlock>
+      </ScriptProperty>
     </Members>
   </Type>
 </Types>
