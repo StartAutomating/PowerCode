@@ -1,10 +1,10 @@
 <#
 .SYNOPSIS
-
+    Finds extensions for a module
 .DESCRIPTION
-
+    Finds extended commands for a module. 
 .EXAMPLE
-    $posh.Commands.FindExtensions($posh, "$pwd")
+    $PowerCode.FindExtensions($PowerCode, "$pwd")
 #>
 $targetModules = @()
 $targetPaths = @()
