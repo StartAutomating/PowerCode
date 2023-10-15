@@ -6,12 +6,13 @@
 .EXAMPLE
     Get-VSCode -Version
 #>
-[Management.Automation.Cmdlet("Get","VSCode")]
+[Management.Automation.Cmdlet("(?:Get){0,1}","(?>Power|VS)Code")]
 param(
 # If set, will get the version of VSCode.
 [Parameter(Mandatory)]
+[Alias('VSCodeVersion')]
 [switch]
-$Version
+$CodeVersion
 )
 
 (code -v | Select-Object -First 1) -as [Version]
