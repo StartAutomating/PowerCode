@@ -5,7 +5,7 @@ Types/PowerCode/FindExtensions.ps1
 
 
 ### Synopsis
-
+Finds extensions for a module
 
 
 
@@ -13,6 +13,9 @@ Types/PowerCode/FindExtensions.ps1
 
 
 ### Description
+
+Finds extended commands for a module.
+
 
 
 ---
@@ -22,7 +25,7 @@ Types/PowerCode/FindExtensions.ps1
 > EXAMPLE 1
 
 ```PowerShell
-$posh.Commands.FindExtensions($posh, "$pwd")
+$PowerCode.FindExtensions($PowerCode, "$pwd")
 ```
 
 
