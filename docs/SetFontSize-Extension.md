@@ -58,7 +58,7 @@ If set, will change the font size
 
 
 
-#### **SetFontIn**
+#### **SetFontSizeIn**
 
 Where the font size change should take place.
 
@@ -76,9 +76,9 @@ Valid Values:
 
 
 
-|Type        |Required|Position|PipelineInput        |Aliases     |
-|------------|--------|--------|---------------------|------------|
-|`[String[]]`|false   |2       |true (ByPropertyName)|UpdateFontIn|
+|Type        |Required|Position|PipelineInput        |Aliases         |
+|------------|--------|--------|---------------------|----------------|
+|`[String[]]`|false   |2       |true (ByPropertyName)|UpdateFontSizeIn|
 
 
 
@@ -89,5 +89,5 @@ Valid Values:
 
 ### Syntax
 ```PowerShell
-Extensions/SetFontSize.PowerCode.ps1 [-SetFontSize] <Double> [[-SetFontIn] <String[]>] [<CommonParameters>]
+Extensions/SetFontSize.PowerCode.ps1 [-SetFontSize] <Double> [[-SetFontSizeIn] <String[]>] [<CommonParameters>]
 ```
