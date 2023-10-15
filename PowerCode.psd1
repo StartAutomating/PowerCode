@@ -5,6 +5,7 @@
     Author = 'James Brundage'
     Copyright = '2023 Start-Automating'
     Description = 'A PowerShell Module for Customizing Visual Studio Code'
+    TypesToProcess = 'PowerCode.types.ps1xml'
     PrivateData   = @{
         PSData    = @{
             Tags       = 'PowerShell', 'VSCode', 'VisualStudioCode'
@@ -23,5 +24,12 @@
 
 '@
         }
+        CommandTypes = @{
+            'PowerCode' = @{
+                Pattern = '(?>^|\.)PowerCode(?>$|\.ps1$)'
+                Description = 'Commands that extend PowerCode'
+            }
+        }
     }
+    
 }
