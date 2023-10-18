@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <!-- Generated with PSSVG 0.2.10 <https://github.com/StartAutomating/PSSVG> -->
-<svg viewBox="0 0 100 100" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns="http://www.w3.org/2000/svg">
+<svg viewBox="0 0 300 100" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns="http://www.w3.org/2000/svg">
   <defs>
     <style type="text/css">@import url('https://fonts.googleapis.com/css?family=Tilt Neon')</style>
   </defs>
@@ -10,7 +10,7 @@
   <symbol id="psChevron" viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
     <polygon points="40,20 45,20 60,50 35,80 32.5,80 55,50" />
   </symbol>
-  <use href="#codeTriangle" stroke-width="0.01" stroke="#4488ff" fill="transparent" width="80%" height="80%" y="10%" x="-10%" />
-  <use href="#psChevron" fill="#4488ff" height="20%" y="40%" x="-25%" />
-  <text alignment-baseline="central" y="49%" font-size=".8em" x="45%" text-anchor="start" fill="#4488ff" style="font-family:'Tilt Neon'">PowerCode</text>
+  <use href="#codeTriangle" stroke-width="0.01" stroke="#4488ff" fill="transparent" width="80%" height="80%" y="10%" x="0%" />
+  <use href="#psChevron" fill="#4488ff" height="20%" y="40%" x="-12.5%" />
+  <text alignment-baseline="central" y="49%" font-size="1.8em" x="45%" text-anchor="start" fill="#4488ff" style="font-family:'Tilt Neon'">PowerCode</text>
 </svg>
