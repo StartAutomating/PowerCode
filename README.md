@@ -1,5 +1,5 @@
 <div align='center'>
-<img src='Assets/PowerCode.svg' alt='PowerCode' />
+<img src='Assets/PowerCode@1080p.png' alt='PowerCode' />
 <br/>
 <a href='https://github.com/sponsors/StartAutomating'>❤️</a>
 <a href='https://github.com/StartAutomating/PowerCode/stargazers'>⭐</a>
