@@ -8,7 +8,7 @@
 .EXAMPLE
     Get-VSCode -CodeTelemetry
 #>
-[Management.Automation.Cmdlet("(?:Get){0,1}","(?>Power|VS)Code")]
+[ValidatePattern('^(?:Get-)?(?>Power|VS)Code')]
 param(
 # If set, will list telemetry events visual studio code collects.
 [Parameter(Mandatory)]

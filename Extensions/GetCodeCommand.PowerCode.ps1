@@ -8,7 +8,7 @@
 .EXAMPLE
     Get-VSCode -CommandList
 #>
-[Management.Automation.Cmdlet("(?:Get){0,1}","(?>Power|VS)Code")]
+[ValidatePattern('^(?:Get-)?(?>Power|VS)Code')]
 param(
 # If set, will get the version of VSCode.
 [Parameter(Mandatory)]

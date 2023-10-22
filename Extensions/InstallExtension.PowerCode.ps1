@@ -4,7 +4,7 @@
 .DESCRIPTION
     Installs Extensions for Visual Studio Code Extensions
 #>
-[Management.Automation.Cmdlet("Install","(?>Power|VS)Code")]
+[ValidatePattern('^Install-?(?>Power|VS)Code')]
 param(
 # The Extension Identifier
 [Parameter(Mandatory,ValueFromPipelineByPropertyName)]

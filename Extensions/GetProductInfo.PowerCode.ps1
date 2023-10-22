@@ -6,7 +6,7 @@
 .EXAMPLE
     Get-VSCode -ProductInfo
 #>
-[Management.Automation.Cmdlet("Get","VSCode")]
+[ValidatePattern('^(?:Get-)?(?>Power|VS)Code')]
 param(
 # If set, will get the version of VSCode.
 [Parameter(Mandatory)]

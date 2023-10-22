@@ -10,7 +10,7 @@
 .EXAMPLE
     Update-PowerCode -UpdateFontFamily 16 -SetFontFamily "Arial"
 #>
-[Management.Automation.Cmdlet("(?>Update|Set)","(?>Power|VSCode)")]
+[ValidatePattern('^(?>Update|Set)-(?>Power|VS)Code')]
 param(
 # If set, will change the font size
 [Parameter(Mandatory,ValueFromPipelineByPropertyName)]

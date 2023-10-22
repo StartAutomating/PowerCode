@@ -8,7 +8,7 @@
 .EXAMPLE
     PowerCode -GetUserDirectory
 #>
-[Management.Automation.Cmdlet("(?:Get){0,1}","(?>Power|VS)Code")]
+[ValidatePattern('^(?:Get-)?(?>Power|VS)Code')]
 param(
 # If set, will get the user directory.
 [Parameter(Mandatory)]

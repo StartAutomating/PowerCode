@@ -6,7 +6,7 @@
 .EXAMPLE
     Get-PowerCode -PackageFileList
 #>
-[Management.Automation.Cmdlet("(?:Get)?","(?>Power|VS)Code")]
+[ValidatePattern('^(?:Get-)?(?>Power|VS)Code')]
 param(
 # If set, will get a list of all package files.
 [Parameter(Mandatory)]

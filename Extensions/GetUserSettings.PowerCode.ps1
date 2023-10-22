@@ -8,7 +8,7 @@
 .EXAMPLE
     PowerCode -GetUserSetting
 #>
-[Management.Automation.Cmdlet("(?:Get){0,1}","(?>Power|VS)Code")]
+[ValidatePattern('^(?:Get-)?(?>Power|VS)Code')]
 param(
 # If set, will get the current user's settings.
 [Parameter(Mandatory)]

@@ -4,7 +4,7 @@
 .DESCRIPTION
     Uninstalls extensions for Visual Studio Code
 #>
-[Management.Automation.Cmdlet("Uninstall","(?>Power|VS)Code")]
+[ValidatePattern('^Uninstall-(?>Power|VS)Code')]
 param(
 # The Extension ID
 [Parameter(Mandatory,ValueFromPipelineByPropertyName)]

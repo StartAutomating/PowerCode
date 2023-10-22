@@ -10,7 +10,13 @@
 .EXAMPLE
     PowerCode -CodeVersion
 #>
-[Management.Automation.Cmdlet("(?:Get){0,1}","(?>Power|VS)Code")]
+[ValidatePattern(
+    '^
+    (?:Get)?         
+    (?>Power|VS)Code
+    ', 
+    Options='IgnoreCase,IgnorePatternWhitespace'
+)]
 param(
 # If set, will get the version of VSCode.
 [Parameter(Mandatory)]
