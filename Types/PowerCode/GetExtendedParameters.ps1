@@ -42,7 +42,7 @@ foreach ($extensionCommand in $this.ExtensionsOf($InvocationName)) {
     
         # Check for parameter validity.
         foreach ($mappedParamName in @($mappedParams.Keys)) {
-            if (-not $this.IsParameterValid($exensionCommand, $mappedParamName, $mappedParams[$mappedParamName])) {
+            if (-not $this.IsParameterValid($extensionCommand, $mappedParamName, $mappedParams[$mappedParamName])) {
                 $mappedParams.Remove($mappedParamName)
             }
         }
