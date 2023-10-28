@@ -33,7 +33,7 @@ Get-PowerCode -PackageSnippet
 
 
 ### Parameters
-#### **PackageSnippet**
+#### **PackageSnippetFile**
 
 If set, will get a list of all package files.
 
@@ -42,9 +42,9 @@ If set, will get a list of all package files.
 
 
 
-|Type      |Required|Position|PipelineInput|Aliases        |
-|----------|--------|--------|-------------|---------------|
-|`[Switch]`|true    |named   |false        |PackageSnippets|
+|Type      |Required|Position|PipelineInput|Aliases            |
+|----------|--------|--------|-------------|-------------------|
+|`[Switch]`|true    |named   |false        |PackageSnippetFiles|
 
 
 
@@ -55,5 +55,5 @@ If set, will get a list of all package files.
 
 ### Syntax
 ```PowerShell
-Extensions/Snippets/GetPackageSnippetFile.PowerCode.ps1 -PackageSnippet [<CommonParameters>]
+Extensions/Snippets/GetPackageSnippetFile.PowerCode.ps1 -PackageSnippetFile [<CommonParameters>]
 ```
