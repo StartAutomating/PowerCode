@@ -10,9 +10,9 @@
 param(
 # If set, will get a list of all package files.
 [Parameter(Mandatory)]
-[Alias('PackageSnippets')]
+[Alias('PackageSnippetFiles')]
 [switch]
-$PackageSnippet
+$PackageSnippetFile
 )
 
 Get-PowerCode -PackageFileList | 
