@@ -4,16 +4,16 @@
 .DESCRIPTION
     Gets the nearest VSCode directory
 .EXAMPLE
-    Get-PowerCode -GetUserTasks
+    Get-PowerCode -GetNearestVSCodeDirectory
 .EXAMPLE
-    PowerCode -GetUserTask
+    PowerCode -GetNearestVSCodeDirectory
 #>
 [ValidatePattern('^(?:Get-)?(?>Power|VS)Code')]
 param(
 # If set, will get the nearest VS Code Directory.
 [Parameter(Mandatory)]
 [switch]
-$GetVSCodeDirectory
+$GetNearestVSCodeDirectory
 )
 
 $currentLocation = $pwd
