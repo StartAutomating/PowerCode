@@ -64,6 +64,8 @@ Set-PowerCode -SetFontFamily 'Arial' -setfontfamilyin markdown
 |[Get-VSCode](docs/Get-VSCode.md)                  |
 |[Install-PowerCode](docs/Install-PowerCode.md)    |
 |[Install-VSCode](docs/Install-VSCode.md)          |
+|[Remove-PowerCode](docs/Remove-PowerCode.md)      |
+|[Remove-VSCode](docs/Remove-VSCode.md)            |
 |[Set-PowerCode](docs/Set-PowerCode.md)            |
 |[Set-VSCode](docs/Set-VSCode.md)                  |
 |[Uninstall-PowerCode](docs/Uninstall-PowerCode.md)|
