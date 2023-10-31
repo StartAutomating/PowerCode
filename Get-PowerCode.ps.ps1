@@ -15,9 +15,10 @@ function Get-PowerCode
     #>
     [CmdletBinding(PositionalBinding=$false)]
     [Alias(
-        'Get-VSCode',        
+        'Get-VSCode',                
         'Install-PowerCode','Install-VSCode',
-        'Set-PowerCode','Set-VSCode',
+        'Remove-VSCode','Remove-PowerCode',
+        'Set-PowerCode','Set-VSCode',        
         'Uninstall-PowerCode','Uninstall-VSCode',
         'Update-PowerCode','Update-VSCode'
     )]
@@ -35,36 +36,48 @@ function Get-PowerCode
     $InputObject    
     )
 
-    dynamicParam {             
-        $myModule = $PowerCode
+    dynamicParam {
+        # We want to get dynamic parameters from anywhere in the module, so define `$MyModule
+        $myModule = $MyInvocation.MyCommand.ScriptBlock.Module
+        
+        # And we'll need to know our invocation name, so define that as well.
         $myInv    = $MyInvocation
         
-        # Fun PowerShell fact:  'Get' is the default verb.
-                
         $dynamicParameterSettings = [Ordered]@{
             ParameterSetName = '__AllParameterSets'
             NoMandatory = $true
             PositionOffset = 1kb
         }
 
+        # If we have an invocation name
         if ($myInv.InvocationName) {
-            $PowerCode.GetDynamicParameters($myInv.InvocationName)
+            # get the dynamic parameters from that
+            $myModule.GetDynamicParameters($myInv.InvocationName)
         } else {
+            # Otherwise, peek at the callstack
             $callstackPeek = @(Get-PSCallStack)[-1]
+            # and get the caller command
             $callerCommand = $callstackPeek.InvocationInfo.MyCommand.ToString()
             $CallerName =
-                if ($callerCommand -match "-Name\s{0,1}(?<Name>\S+)") {
-                    $matches.Name
-                } elseif ($callerCommand -match '(?>gcm|Get-Command)\s{0,1}(?<Name>\S+)') {
-                    $matches.Name
-                }            
-            $PowerCode.GetDynamicParameters($CallerName)
+                # If there was an explicit -Name parameter,
+                if ($callerCommand -match "-Name\s{0,1}(?<Name>\S+)")
+                {
+                    $matches.Name # use that as the caller name
+                }
+                # Otherwise, if Get-Command was called positionally,
+                elseif ($callerCommand -match '(?>gcm|Get-Command)\s{0,1}(?<Name>\S+)')
+                {                    
+                    $matches.Name # use that as the caller name
+                }
+            # Get the dynamic parameters for this potential caller
+            $myModule.GetDynamicParameters($CallerName)
         }
     }
 
-    begin {        
-        $myInv = $MyInvocation
-        $matchingExtensions    = $PowerCode.ExtensionsOf($myInv.InvocationName)
+    begin {
+        $myInv                 = $MyInvocation
+        $myModule              = $MyInvocation.MyCommand.ScriptBlock.Module
+        $matchingExtensions    = $myModule.ExtensionsOf($myInv.InvocationName)
         $steppablePipelines = @()
         $parameterCopy = [Ordered]@{} + $PSBoundParameters
 
@@ -90,8 +103,8 @@ function Get-PowerCode
                 $steppablePipeline = $steppablePipelineCmd.GetSteppablePipeline($MyInvocation.CommandOrigin)
                 # and start the steppable pipeline.
                 $steppablePipeline.Begin($PSCmdlet)
-                $steppablePipelines += $steppablePipeline                         
-        }                
+                $steppablePipelines += $steppablePipeline
+        }
     }
     process {
         $myInv = $MyInvocation
