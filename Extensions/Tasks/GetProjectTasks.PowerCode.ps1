@@ -17,7 +17,7 @@ param(
 $GetProjectTask
 )
 
-Get-PowerCode -GetVSCodeDirectory | 
+Get-PowerCode -NearestVSCodeDirectory | 
     ForEach-Object {
         $foundDirectory =  $_
         $tasksPath = $foundDirectory | Join-Path -ChildPath "tasks.json"
