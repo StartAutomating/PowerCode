@@ -1,5 +1,5 @@
-Extensions/GetUserKeyBindings.PowerCode.ps1
--------------------------------------------
+Extensions/Keybindings/GetUserKeyBindings.PowerCode.ps1
+-------------------------------------------------------
 
 
 
@@ -60,5 +60,5 @@ If set, will get the current user's KeyBindings.
 
 ### Syntax
 ```PowerShell
-Extensions/GetUserKeyBindings.PowerCode.ps1 -GetUserKeyBindings [<CommonParameters>]
+Extensions/Keybindings/GetUserKeyBindings.PowerCode.ps1 -GetUserKeyBindings [<CommonParameters>]
 ```
