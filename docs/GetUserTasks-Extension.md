@@ -1,5 +1,5 @@
-Extensions/GetUserTasks.PowerCode.ps1
--------------------------------------
+Extensions/Tasks/GetUserTasks.PowerCode.ps1
+-------------------------------------------
 
 
 
@@ -60,5 +60,5 @@ If set, will get the current user's tasks.
 
 ### Syntax
 ```PowerShell
-Extensions/GetUserTasks.PowerCode.ps1 -GetUserTask [<CommonParameters>]
+Extensions/Tasks/GetUserTasks.PowerCode.ps1 -GetUserTask [<CommonParameters>]
 ```
