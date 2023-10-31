@@ -40,7 +40,7 @@ PowerCode -GetUserTaskInput
 ### Parameters
 #### **GetUserTaskInput**
 
-If set, will get the current user's tasks.
+If set, will get the current user task inputs.
 
 
 
